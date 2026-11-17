@@ -38,6 +38,10 @@ Fuente: [books.toscrape.com](https://books.toscrape.com), sitio público creado 
 | Segunda corrida | 0 duplicados: el historial solo crece si cambia el precio o el stock |
 | Tests | 22 (parsing con HTML real, normalización, pipelines e integración con PostgreSQL) |
 
+Cómo se midió: `docker compose --profile scrape run --rm scraper` en un PC con Windows 11 y Docker Desktop,
+8 peticiones concurrentes por dominio con autothrottle activo. El tiempo es `elapsed_time_seconds` de las
+estadísticas de Scrapy al final de la corrida (17-nov-2026); varía según la red y la carga del sitio.
+
 ## Cómo correrlo
 
 ```bash
